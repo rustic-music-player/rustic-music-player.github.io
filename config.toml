@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "rustic.cloud"
+base_url = "https://rustic.cloud"
 title = "Rustic Music Player"
 
 # Whether to automatically compile all Sass files in the sass directory
