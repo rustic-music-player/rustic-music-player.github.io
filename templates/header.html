@@ -1,0 +1,25 @@
+<header class="navbar">
+    <div class="navbar__title-container">
+        <a href="/" class="navbar__title"><h1>Rustic</h1></a>
+    </div>
+    <nav class="navbar__links">
+        {% for page in config.extra.pages %}
+        {% if page.link %}
+        <a href="{{ page.link }}" class="navbar__link">{{ page.title }}</a>
+        {% elif page.page %}
+        {% set url = get_url(path="@/" ~ page.page) %}
+        <a href="{{ url }}" class="navbar__link">{{ page.title }}</a>
+        {% else %}
+        <div class="navbar__link navbar__link--category">
+            {{ page.title }}
+            <div class="navbar__sub-links">
+            {% for subpage in page.links %}
+                {% set url = get_url(path="@/" ~ subpage.page) %}
+                <a class="navbar__sub-link" href="{{ url }}">{{subpage.title}}</a>
+            {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </nav>
+</header>

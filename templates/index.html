@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+{% for section in config.extra.sections %}
+{% set file = get_page(path="home/" ~ section) %}
+<h2>{{ file.title }}</h2>
+{{ file.content | safe }}
+{% endfor %}
+{% endblock content %}

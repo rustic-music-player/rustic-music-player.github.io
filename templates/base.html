@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="referrer" content="no-referrer"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    {% block title -%}
+    <title>{{ config.title }}</title>
+    {%- endblock title %}
+    <link rel="stylesheet" href="/styles.css"/>
+    <link rel="stylesheet" href="/downloads.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    {% if page %}
+    {% if page.class %}
+    {{ page.class }}
+    {% endif %}
+    {% endif %}
+{% include "header.html" %}
+<main class="content{% if page.extra.class %} {{ page.extra.class }} {% endif %}">
+    {% block content %}
+    {% endblock content %}
+</main>
+</body>
+</html>
