@@ -2,6 +2,7 @@
     <div class="navbar__title-container">
         <a href="/" class="navbar__title"><h1>Rustic</h1></a>
     </div>
+    <input type="checkbox" id="navbar-toggle" class="navbar__toggle-checkbox"/>
     <nav class="navbar__links">
         {% for page in config.extra.pages %}
         {% if page.link %}
@@ -16,7 +17,7 @@
             {% for subpage in page.links %}
                 {% set url = get_url(path="@/" ~ subpage.page) %}
                 <a class="navbar__sub-link" href="{{ url }}">{{subpage.title}}</a>
-            {% endfor %}
+                {% endfor %}
             </div>
         </div>
         {% endif %}
@@ -24,4 +25,8 @@
         {% set github_icon = load_data(path="static/github.svg") %}
         <a class="navbar__link" href="https://github.com/rustic-music-player">{{ github_icon | safe }}</a>
     </nav>
+    <label for="navbar-toggle" class="navbar__toggle-button">
+        {% set menu_icon = load_data(path="static/menu.svg") %}
+        {{ menu_icon | safe }}
+    </label>
 </header>
