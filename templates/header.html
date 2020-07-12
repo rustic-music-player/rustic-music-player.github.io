@@ -21,5 +21,7 @@
         </div>
         {% endif %}
         {% endfor %}
+        {% set github_icon = load_data(path="static/github.svg") %}
+        <a class="navbar__link" href="https://github.com/rustic-music-player">{{ github_icon | safe }}</a>
     </nav>
 </header>

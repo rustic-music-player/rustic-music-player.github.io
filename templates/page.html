@@ -1,4 +1,4 @@
 {% extends "base.html" %}
 {% block content %}
-{{ page.content | safe }}
+{{ page.content | replace(from=":check:", to="✔") | replace(from=":cross:", to="✖") | safe }}
 {% endblock content %}

@@ -84,12 +84,18 @@ $navbar-height: 64px;
 }
 
 .content {
-    padding: 8px;
+  padding: 8px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+ul {
+  padding-left: 32px;
 }
 
 h2, h3, h4 {
-    width: 100%;
-    margin-bottom: 16px;
+  width: 100%;
+  margin: 16px 0;
 }
 
 h2 {
@@ -102,7 +108,23 @@ h3 {
     border-bottom: 6px solid var(--primary-color);
 }
 
-h4 {
-    max-width: 100px;
-    border-bottom-width: 4px;
+.provider-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.provider {
+  flex: 1 50%;
+}
+
+@media (max-width: 1200px) {
+  .provider-list {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  .provider {
+    flex: unset;
+  }
 }
