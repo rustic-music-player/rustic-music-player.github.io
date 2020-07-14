@@ -4,8 +4,6 @@ compile_sass = true
 highlight_code = false
 build_search_index = false
 
-ignored_content = ["home/*"]
-
 [extra]
 sections = [
     "core.md",

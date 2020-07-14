@@ -8,7 +8,8 @@
     <title>{{ config.title }}</title>
     {%- endblock title %}
     <link rel="stylesheet" href="/styles.css"/>
-    <link rel="stylesheet" href="/downloads.css"/>
+    {% block stylesheets %}
+    {%- endblock stylesheets %}
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
 </head>
 <body>

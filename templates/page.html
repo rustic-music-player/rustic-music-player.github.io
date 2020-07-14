@@ -1,4 +1,7 @@
 {% extends "base.html" %}
+{% block stylesheets %}
+<link rel="stylesheet" href="/pages/{{ page.slug }}.css"/>
+{% endblock stylesheets %}
 {% block content %}
 {{ page.content | replace(from=":check:", to="✔") | replace(from=":cross:", to="✖") | safe }}
 {% endblock content %}
