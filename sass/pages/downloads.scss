@@ -7,6 +7,7 @@
     text-decoration: none;
     width: 150px;
     margin: 8px;
+    transition: 0.1s ease-in-out all;
 
     &:hover {
       background: var(--primary-color-hover);
